@@ -42,7 +42,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Pages.cs" />
-    <Compile Include="ScreensParts\PageGoogle.cs" />
+    <Compile Include="PagesParts\PageGoogle.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Mobile.Framework\Mobile.Framework.csproj">
