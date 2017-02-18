@@ -6,26 +6,19 @@ using NUnit.Framework;
 namespace API.Android.Test
 {
     [TestFixture]
-    public class FrameworkUiTest
+    public class BaseFixture
     {
         [SetUp]
         public void SetUp()
         {
             Uri remoteAddress = new Uri("http://127.0.0.1:4723/wd/hub");
-            string appiumVersion = "1.1.0";
-            string platformName = "Android";
-            string deviceName = "Android";
-            string platformVersion = "4.3";
-            string name = "C# Android tutorial";
-            string app = @"P:\GitHub\appium_android\apps\api.apk";
-
             Manager.SetRemoteAddress(remoteAddress);
-            Manager.SetCapability("appium-version", appiumVersion);
-            Manager.SetCapability("platformName", platformName);
-            Manager.SetCapability("deviceName", deviceName);
-            Manager.SetCapability("platformVersion", platformVersion);
-            Manager.SetCapability("name", name);
-            Manager.SetCapability("app", app);
+            Manager.SetCapability("automationName", "Appium");
+            Manager.SetCapability("platformName", "Android");
+            Manager.SetCapability("platformVersion", "");
+            Manager.SetCapability("deviceName", "Android Emulator");
+            Manager.SetCapability("app", @"P:\GitHub\mobile_framework\apps\api.apk");
+            Manager.SetCapability("udid", "emulator-5554"); // Baytrail132BC072 or emulator-5554 (my devices)
             Manager.InitializeAndroid();
         }
 

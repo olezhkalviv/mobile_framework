@@ -37,9 +37,20 @@ namespace Mobile.Framework.ManagerParts
             return elements;
         }
 
+        public void GoToUrl(string url)
+        {
+            Wrapper.Navigate().GoToUrl(url);
+        }
+
         public void SetImplicitWait(int seconds)
         {
             Wrapper.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(seconds));
+        }
+
+        // todo: FOR TEST PURPOSES WHILE ADDING NEW MEMBERS
+        private void TestPurposes()
+        {
+            
         }
     }
 }

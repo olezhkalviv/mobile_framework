@@ -6,6 +6,8 @@ namespace Mobile.Framework.ManagerParts
     {
         internal AppiumWebElement Wrapper { get; }
 
+        public string Text => Wrapper.Text;
+
         public MobileElement(AppiumWebElement wrapper)
         {
             Wrapper = wrapper;
@@ -19,6 +21,17 @@ namespace Mobile.Framework.ManagerParts
         public string GetAttribute(string attributeName)
         {
             return Wrapper.GetAttribute(attributeName);
+        }
+
+        public void SendKeys(string text)
+        {
+            Wrapper.SendKeys(text);
+        }
+
+        // todo: FOR TEST PURPOSES WHILE ADDING NEW MEMBERS
+        private void TestPurposes()
+        {
+            
         }
     }
 }
