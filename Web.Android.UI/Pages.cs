@@ -1,4 +1,4 @@
-﻿using Web.Android.UI.ScreensParts;
+﻿using Web.Android.UI.PagesParts;
 
 namespace Web.Android.UI
 {

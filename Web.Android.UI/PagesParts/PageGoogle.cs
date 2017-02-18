@@ -2,7 +2,7 @@
 using Mobile.Framework;
 using Mobile.Framework.ManagerParts;
 
-namespace Web.Android.UI.ScreensParts
+namespace Web.Android.UI.PagesParts
 {
     public class PageGoogle
     {
