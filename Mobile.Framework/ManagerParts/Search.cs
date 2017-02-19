@@ -1,10 +1,27 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Appium;
 
 namespace Mobile.Framework.ManagerParts
 {
     public class MobileSearch
     {
         internal By Wrapper { get; private set; }
+
+        public static MobileSearch AccessibilityId(string accessibilityId)
+        {
+            return new MobileSearch()
+            {
+                Wrapper = MobileBy.AccessibilityId(accessibilityId)
+            };
+        }
+
+        public static MobileSearch AndroidUiAutomator(string androidUiAutomator)
+        {
+            return new MobileSearch()
+            {
+                Wrapper = MobileBy.AndroidUIAutomator(androidUiAutomator)
+            };
+        }
 
         public static MobileSearch ClassName(string className)
         {
@@ -27,6 +44,22 @@ namespace Mobile.Framework.ManagerParts
             return new MobileSearch()
             {
                 Wrapper = By.Id(id)
+            };
+        }
+
+        public static MobileSearch IosNsPredicate(string iosNsPredicate)
+        {
+            return new MobileSearch()
+            {
+                Wrapper = MobileBy.IosNSPredicate(iosNsPredicate)
+            };
+        }
+
+        public static MobileSearch IosUiAutomation(string iosUiAutomation)
+        {
+            return new MobileSearch()
+            {
+                Wrapper = MobileBy.IosUIAutomation(iosUiAutomation)
             };
         }
 
@@ -67,6 +100,14 @@ namespace Mobile.Framework.ManagerParts
             return new MobileSearch()
             {
                 Wrapper = By.XPath(xPath)
+            };
+        }
+
+        public static MobileSearch WindowsAutomation(string windowsAutomation)
+        {
+            return new MobileSearch()
+            {
+                Wrapper = MobileBy.WindowsAutomation(windowsAutomation)
             };
         }
     }

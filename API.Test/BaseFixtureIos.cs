@@ -1,5 +1,6 @@
 ﻿using System;
-using API.Android.UI;
+using System.Threading;
+using API.Ios.UI;
 using Mobile.Framework;
 using NUnit.Framework;
 
@@ -11,7 +12,7 @@ namespace API.Test
         [SetUp]
         public void SetUp()
         {
-            Uri remoteAddress = new Uri("http://192.168.0.108:4723/wd/hub");
+            Uri remoteAddress = new Uri("http://192.168.0.107:4723/wd/hub");
             Manager.SetRemoteAddress(remoteAddress);
             Manager.SetCapability("platformName", "ios");
             Manager.SetCapability("platformVersion", "9.3");
@@ -23,15 +24,23 @@ namespace API.Test
         }
 
         [Test]
-        public void TestAccessibility()
+        public void TestButtons()
         {
+            Screens.ScreenApiDemos.BtnButtons.Click();
+            Manager.Driver.Back();
+        }
 
+        [Test]
+        public void TestControls()
+        {
+            Screens.ScreenApiDemos.BtnControls.Click();
+            Manager.Driver.Back();
         }
 
         [TearDown]
         public void TearDown()
         {
-            Manager.Driver.Quit();
+            //Manager.Driver.Quit();
         }
     }
 }

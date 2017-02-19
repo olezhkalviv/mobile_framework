@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.Test", "Web.Test\Web.Te
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.UI", "Web.UI\Web.UI.csproj", "{A995088F-DA5E-4EC0-BBF3-31EC2578FDE1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API.Ios.UI", "API.Ios.UI\API.Ios.UI.csproj", "{443BD744-E9CC-4A49-9C4F-EFB43C78F56F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{A995088F-DA5E-4EC0-BBF3-31EC2578FDE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A995088F-DA5E-4EC0-BBF3-31EC2578FDE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A995088F-DA5E-4EC0-BBF3-31EC2578FDE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{443BD744-E9CC-4A49-9C4F-EFB43C78F56F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{443BD744-E9CC-4A49-9C4F-EFB43C78F56F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{443BD744-E9CC-4A49-9C4F-EFB43C78F56F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{443BD744-E9CC-4A49-9C4F-EFB43C78F56F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

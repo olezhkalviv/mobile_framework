@@ -74,7 +74,7 @@
       <Project>{804c4a89-460e-470a-8387-9ed10894452c}</Project>
       <Name>Mobile.Framework</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Web.Android.UI\Web.UI.csproj">
+    <ProjectReference Include="..\Web.UI\Web.UI.csproj">
       <Project>{a995088f-da5e-4ec0-bbf3-31ec2578fde1}</Project>
       <Name>Web.UI</Name>
     </ProjectReference>
