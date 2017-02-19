@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API.Android.Test", "API.Android.Test\API.Android.Test.csproj", "{19C41702-390B-4DBD-B163-2C007CD7C749}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mobile.Framework", "Mobile.Framework\Mobile.Framework.csproj", "{804C4A89-460E-470A-8387-9ED10894452C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API.Android.UI", "API.Android.UI\API.Android.UI.csproj", "{C9A43BEA-5835-4EDA-A76C-5F3DA9802A21}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.Android.Test", "Web.Android.Test\Web.Android.Test.csproj", "{0BEE5170-5869-4E4A-B9DC-B1EFC3661D04}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API.Test", "API.Test\API.Test.csproj", "{19C41702-390B-4DBD-B163-2C007CD7C749}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.Android.UI", "Web.Android.UI\Web.Android.UI.csproj", "{A995088F-DA5E-4EC0-BBF3-31EC2578FDE1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.Test", "Web.Test\Web.Test.csproj", "{0BEE5170-5869-4E4A-B9DC-B1EFC3661D04}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.UI", "Web.UI\Web.UI.csproj", "{A995088F-DA5E-4EC0-BBF3-31EC2578FDE1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +19,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{19C41702-390B-4DBD-B163-2C007CD7C749}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{19C41702-390B-4DBD-B163-2C007CD7C749}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{19C41702-390B-4DBD-B163-2C007CD7C749}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{19C41702-390B-4DBD-B163-2C007CD7C749}.Release|Any CPU.Build.0 = Release|Any CPU
 		{804C4A89-460E-470A-8387-9ED10894452C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{804C4A89-460E-470A-8387-9ED10894452C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{804C4A89-460E-470A-8387-9ED10894452C}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -31,6 +27,10 @@ Global
 		{C9A43BEA-5835-4EDA-A76C-5F3DA9802A21}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9A43BEA-5835-4EDA-A76C-5F3DA9802A21}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C9A43BEA-5835-4EDA-A76C-5F3DA9802A21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19C41702-390B-4DBD-B163-2C007CD7C749}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19C41702-390B-4DBD-B163-2C007CD7C749}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19C41702-390B-4DBD-B163-2C007CD7C749}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19C41702-390B-4DBD-B163-2C007CD7C749}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0BEE5170-5869-4E4A-B9DC-B1EFC3661D04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0BEE5170-5869-4E4A-B9DC-B1EFC3661D04}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0BEE5170-5869-4E4A-B9DC-B1EFC3661D04}.Release|Any CPU.ActiveCfg = Release|Any CPU

@@ -1,6 +1,6 @@
-﻿using Web.Android.UI.PagesParts;
+﻿using Web.UI.PagesParts;
 
-namespace Web.Android.UI
+namespace Web.UI
 {
     public class Pages
     {

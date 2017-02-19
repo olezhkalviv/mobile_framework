@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0BEE5170-5869-4E4A-B9DC-B1EFC3661D04}</ProjectGuid>
+    <ProjectGuid>{19C41702-390B-4DBD-B163-2C007CD7C749}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Web.Android.Test</RootNamespace>
-    <AssemblyName>Web.Android.Test</AssemblyName>
+    <RootNamespace>API.Test</RootNamespace>
+    <AssemblyName>API.Test</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -65,21 +65,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseFixture.cs" />
+    <Compile Include="BaseFixtureIos.cs" />
+    <Compile Include="BaseFixtureAndroid.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\API.Android.UI\API.Android.UI.csproj">
+      <Project>{c9a43bea-5835-4eda-a76c-5f3da9802a21}</Project>
+      <Name>API.Android.UI</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Mobile.Framework\Mobile.Framework.csproj">
       <Project>{804c4a89-460e-470a-8387-9ed10894452c}</Project>
       <Name>Mobile.Framework</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Web.Android.UI\Web.Android.UI.csproj">
-      <Project>{a995088f-da5e-4ec0-bbf3-31ec2578fde1}</Project>
-      <Name>Web.Android.UI</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

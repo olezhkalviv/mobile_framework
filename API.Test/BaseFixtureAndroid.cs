@@ -3,21 +3,22 @@ using API.Android.UI;
 using Mobile.Framework;
 using NUnit.Framework;
 
-namespace API.Android.Test
+namespace API.Test
 {
     [TestFixture]
-    public class BaseFixture
+    public class BaseFixtureAndroid
     {
         [SetUp]
         public void SetUp()
         {
             Uri remoteAddress = new Uri("http://127.0.0.1:4723/wd/hub");
             Manager.SetRemoteAddress(remoteAddress);
-            Manager.SetCapability("automationName", "Appium");
             Manager.SetCapability("platformName", "Android");
             Manager.SetCapability("platformVersion", "");
             Manager.SetCapability("deviceName", "Android Emulator");
             Manager.SetCapability("app", @"P:\GitHub\mobile_framework\apps\api.apk");
+            Manager.SetCapability("fullReset", "true");
+            //Manager.SetCapability("avd", "Nex7_6_32"); // for emulator
             Manager.SetCapability("udid", "emulator-5554"); // Baytrail132BC072 or emulator-5554 (my devices)
             Manager.InitializeAndroid();
         }

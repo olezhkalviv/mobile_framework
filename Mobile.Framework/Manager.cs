@@ -9,7 +9,8 @@ namespace Mobile.Framework
 {
     public class Manager
     {
-        private const int ImplicitTimeoutSeconds = 60;
+        private const int WaitForDeviceSeconds = 300;
+        private const int ImplicitTimeoutSeconds = 5;
         private const int WaiterTimeoutSeconds = 5;
 
         internal static DesiredCapabilities DesiredCapabilities { get; private set; }
@@ -17,18 +18,23 @@ namespace Mobile.Framework
         internal static string AppPath { get; private set; }
 
         public static Driver Driver { get; private set; }
+        public static Factory Factory { get; private set; }
         public static Waiter Waiter { get; private set; }
 
         public static void InitializeAndroid(int implicitTimeoutSeconds = ImplicitTimeoutSeconds, int waiterTimeoutSeconds = WaiterTimeoutSeconds)
         {
-            Driver = new Driver(new AndroidDriver<AppiumWebElement>(RemoteAddress, DesiredCapabilities, TimeSpan.FromSeconds(implicitTimeoutSeconds)));
+            Driver = new Driver(new AndroidDriver<AppiumWebElement>(RemoteAddress, DesiredCapabilities, TimeSpan.FromSeconds(WaitForDeviceSeconds)));
+            Factory = new Factory();
             Waiter = new Waiter(Driver.Wrapper, TimeSpan.FromSeconds(waiterTimeoutSeconds));
+            Driver.SetImplicitWait(ImplicitTimeoutSeconds);
         }
 
         public static void InitializeIos(int implicitTimeoutSeconds = ImplicitTimeoutSeconds, int waiterTimeoutSeconds = WaiterTimeoutSeconds)
         {
-            Driver = new Driver(new IOSDriver<AppiumWebElement>(RemoteAddress, DesiredCapabilities, TimeSpan.FromSeconds(implicitTimeoutSeconds)));
+            Driver = new Driver(new IOSDriver<AppiumWebElement>(RemoteAddress, DesiredCapabilities, TimeSpan.FromSeconds(WaitForDeviceSeconds)));
+            Factory = new Factory();
             Waiter = new Waiter(Driver.Wrapper, TimeSpan.FromSeconds(waiterTimeoutSeconds));
+            Driver.SetImplicitWait(ImplicitTimeoutSeconds);
         }
 
         public static void SetAppPath(string appPath)

@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Manager.cs" />
+    <Compile Include="ManagerParts\Factory.cs" />
     <Compile Include="ManagerParts\Waiter.cs" />
     <Compile Include="ManagerParts\Search.cs" />
     <Compile Include="ManagerParts\Element.cs" />
