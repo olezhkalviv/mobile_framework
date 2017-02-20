@@ -24,22 +24,27 @@ namespace Mobile.Framework.ManagerParts
             Wrapper.Navigate().Back();
         }
 
-        public MobileElement FindElement(MobileSearch locator)
+        public Element FindElement(Search locator)
         {
-            MobileElement element = new MobileElement(Wrapper.FindElement(locator.Wrapper));
+            Element element = new Element(Wrapper.FindElement(locator.Wrapper));
             return element;
         }
 
-        public List<MobileElement> FindElements(MobileSearch locator)
+        public List<Element> FindElements(Search locator)
         {
-            List<MobileElement> elements = new List<MobileElement>();
-            Wrapper.FindElements(locator.Wrapper).ToList().ForEach(e => elements.Add(new MobileElement(e)));
+            List<Element> elements = new List<Element>();
+            Wrapper.FindElements(locator.Wrapper).ToList().ForEach(e => elements.Add(new Element(e)));
             return elements;
         }
 
         public void GoToUrl(string url)
         {
             Wrapper.Navigate().GoToUrl(url);
+        }
+
+        public void HideKeyboard()
+        {
+            Wrapper.HideKeyboard();
         }
 
         public void SetImplicitWait(int seconds)

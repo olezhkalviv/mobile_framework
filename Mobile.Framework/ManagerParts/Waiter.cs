@@ -19,12 +19,12 @@ namespace Mobile.Framework.ManagerParts
             set { Wrapper.Timeout = value; }
         }
 
-        public void ForElementVisible(MobileSearch locator)
+        public void ForElementVisible(Search locator)
         {
             Wrapper.Until(ExpectedConditions.ElementIsVisible(locator.Wrapper));
         }
 
-        public void ForElementInvisible(MobileSearch locator)
+        public void ForElementInvisible(Search locator)
         {
             Wrapper.Until(ExpectedConditions.InvisibilityOfElementLocated(locator.Wrapper));
         }

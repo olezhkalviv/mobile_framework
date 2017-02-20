@@ -2,13 +2,13 @@
 
 namespace Mobile.Framework.ManagerParts
 {
-    public class MobileElement
+    public class Element
     {
         internal AppiumWebElement Wrapper { get; }
 
         public string Text => Wrapper.Text;
 
-        public MobileElement(AppiumWebElement wrapper)
+        public Element(AppiumWebElement wrapper)
         {
             Wrapper = wrapper;
         }
