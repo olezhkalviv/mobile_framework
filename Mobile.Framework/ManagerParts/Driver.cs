@@ -7,12 +7,17 @@ namespace Mobile.Framework.ManagerParts
 {
     public class Driver
     {
-        internal AppiumDriver<AppiumWebElement> Wrapper { get; private set; }
+        internal Driver()
+        {
 
-        public Driver(AppiumDriver<AppiumWebElement> driver)
+        }
+
+        internal Driver(AppiumDriver<AppiumWebElement> driver)
         {
             Wrapper = driver;
         }
+
+        internal AppiumDriver<AppiumWebElement> Wrapper { get; } // todo: hide
 
         public void Quit()
         {
@@ -24,17 +29,15 @@ namespace Mobile.Framework.ManagerParts
             Wrapper.Navigate().Back();
         }
 
-        public MobileElement FindElement(MobileSearch locator)
+        public Element FindElement(Search locator)
         {
-            MobileElement element = new MobileElement(Wrapper.FindElement(locator.Wrapper));
+            Element element = new Element(Wrapper.FindElement(locator.Wrapper), this);
             return element;
         }
 
-        public List<MobileElement> FindElements(MobileSearch locator)
+        public IEnumerable<Element> FindElements(Search locator)
         {
-            List<MobileElement> elements = new List<MobileElement>();
-            Wrapper.FindElements(locator.Wrapper).ToList().ForEach(e => elements.Add(new MobileElement(e)));
-            return elements;
+            return Wrapper.FindElements(locator.Wrapper).Select(e => new Element(e, this));
         }
 
         public void GoToUrl(string url)
@@ -42,15 +45,14 @@ namespace Mobile.Framework.ManagerParts
             Wrapper.Navigate().GoToUrl(url);
         }
 
+        public void HideKeyboard()
+        {
+            Wrapper.HideKeyboard();
+        }
+
         public void SetImplicitWait(int seconds)
         {
             Wrapper.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(seconds));
-        }
-
-        // todo: FOR TEST PURPOSES WHILE ADDING NEW MEMBERS
-        private void TestPurposes()
-        {
-            
         }
     }
 }

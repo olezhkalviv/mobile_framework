@@ -6,12 +6,14 @@ namespace Mobile.Framework.ManagerParts
 {
     public class Waiter
     {
-        internal WebDriverWait Wrapper;
+        internal Waiter() { }
 
-        public Waiter(AppiumDriver<AppiumWebElement> driver, TimeSpan timeout)
+        internal Waiter(AppiumDriver<AppiumWebElement> driver, TimeSpan timeout)
         {
-            Wrapper = new WebDriverWait(driver, TimeSpan.FromSeconds(60));
+            Wrapper = new WebDriverWait(driver, timeout);
         }
+
+        internal WebDriverWait Wrapper;
 
         public TimeSpan Timeout
         {
@@ -19,12 +21,12 @@ namespace Mobile.Framework.ManagerParts
             set { Wrapper.Timeout = value; }
         }
 
-        public void ForElementVisible(MobileSearch locator)
+        public void ForElementVisible(Search locator)
         {
             Wrapper.Until(ExpectedConditions.ElementIsVisible(locator.Wrapper));
         }
 
-        public void ForElementInvisible(MobileSearch locator)
+        public void ForElementInvisible(Search locator)
         {
             Wrapper.Until(ExpectedConditions.InvisibilityOfElementLocated(locator.Wrapper));
         }

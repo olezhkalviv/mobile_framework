@@ -9,13 +9,14 @@ namespace Mobile.Framework
 {
     public class Manager
     {
+        internal Manager() { }
+
         private const int WaitForDeviceSeconds = 300;
-        private const int ImplicitTimeoutSeconds = 5;
-        private const int WaiterTimeoutSeconds = 5;
+        private const int ImplicitTimeoutSeconds = 30;
+        private const int WaiterTimeoutSeconds = 30;
 
         internal static DesiredCapabilities DesiredCapabilities { get; private set; }
         internal static Uri RemoteAddress { get; private set; }
-        internal static string AppPath { get; private set; }
 
         public static Driver Driver { get; private set; }
         public static Factory Factory { get; private set; }
@@ -37,18 +38,9 @@ namespace Mobile.Framework
             Driver.SetImplicitWait(ImplicitTimeoutSeconds);
         }
 
-        public static void SetAppPath(string appPath)
-        {
-            AppPath = appPath;
-        }
-
         public static void SetCapability(string capability, object capabilityValue)
         {
-            if (DesiredCapabilities == null)
-            {
-                DesiredCapabilities = new DesiredCapabilities();
-            }
-
+            DesiredCapabilities = DesiredCapabilities ?? new DesiredCapabilities();
             DesiredCapabilities.SetCapability(capability, capabilityValue);
         }
 

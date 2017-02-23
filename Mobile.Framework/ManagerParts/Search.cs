@@ -3,109 +3,119 @@ using OpenQA.Selenium.Appium;
 
 namespace Mobile.Framework.ManagerParts
 {
-    public class MobileSearch
+    public class Search
     {
+        internal Search()
+        {
+
+        }
+
         internal By Wrapper { get; private set; }
 
-        public static MobileSearch AccessibilityId(string accessibilityId)
+        // https://developer.android.com/intl/ru/training/accessibility/accessible-app.html (contentDescription or name)
+        // https://developer.apple.com/reference/uikit/uiaccessibilityidentification (accessibilityIdentifier or name)
+        public static Search AccessibilityId(string accessibilityId)
         {
-            return new MobileSearch()
+            return new Search
             {
                 Wrapper = MobileBy.AccessibilityId(accessibilityId)
             };
         }
 
-        public static MobileSearch AndroidUiAutomator(string androidUiAutomator)
+        // http://developer.android.com/intl/ru/tools/testing-support-library/index.html#uia-apis (e.g. "new UiSelector().text(\"REST URL\")")
+        public static Search AndroidUiAutomator(string androidUiAutomator)
         {
-            return new MobileSearch()
+            return new Search
             {
                 Wrapper = MobileBy.AndroidUIAutomator(androidUiAutomator)
             };
         }
 
-        public static MobileSearch ClassName(string className)
+        public static Search ClassName(string className)
         {
-            return new MobileSearch()
+            return new Search
             {
                 Wrapper = By.ClassName(className)
             };
         }
 
-        public static MobileSearch CssSelector(string cssSelector)
+        public static Search CssSelector(string cssSelector)
         {
-            return new MobileSearch()
+            return new Search
             {
                 Wrapper = By.CssSelector(cssSelector)
             };
         }
 
-        public static MobileSearch Id(string id)
+        public static Search Id(string id)
         {
-            return new MobileSearch()
+            return new Search
             {
                 Wrapper = By.Id(id)
             };
         }
 
-        public static MobileSearch IosNsPredicate(string iosNsPredicate)
+        // This locator strategy is available in XCUITest Driver mode
+        public static Search IosNsPredicate(string iosNsPredicate)
         {
-            return new MobileSearch()
+            return new Search
             {
                 Wrapper = MobileBy.IosNSPredicate(iosNsPredicate)
             };
         }
 
-        public static MobileSearch IosUiAutomation(string iosUiAutomation)
+        // Deprecated in XCode 7 - XCUITest framework
+        public static Search IosUiAutomation(string iosUiAutomation)
         {
-            return new MobileSearch()
+            return new Search
             {
                 Wrapper = MobileBy.IosUIAutomation(iosUiAutomation)
             };
         }
 
-        public static MobileSearch LinkText(string linkText)
+        public static Search LinkText(string linkText)
         {
-            return new MobileSearch()
+            return new Search
             {
                 Wrapper = By.LinkText(linkText)
             };
         }
 
-        public static MobileSearch Name(string name)
+        public static Search Name(string name)
         {
-            return new MobileSearch()
+            return new Search
             {
                 Wrapper = By.Name(name)
             };
         }
 
-        public static MobileSearch PartialLinkText(string partialLinkText)
+        public static Search PartialLinkText(string partialLinkText)
         {
-            return new MobileSearch()
+            return new Search
             {
                 Wrapper = By.PartialLinkText(partialLinkText)
             };
         }
 
-        public static MobileSearch TagName(string tagName)
+        public static Search TagName(string tagName)
         {
-            return new MobileSearch()
+            return new Search
             {
                 Wrapper = By.TagName(tagName)
             };
         }
 
-        public static MobileSearch XPath(string xPath)
+        public static Search XPath(string xPath)
         {
-            return new MobileSearch()
+            return new Search
             {
                 Wrapper = By.XPath(xPath)
             };
         }
 
-        public static MobileSearch WindowsAutomation(string windowsAutomation)
+        public static Search WindowsAutomation(string windowsAutomation)
         {
-            return new MobileSearch()
+            return new Search
             {
                 Wrapper = MobileBy.WindowsAutomation(windowsAutomation)
             };

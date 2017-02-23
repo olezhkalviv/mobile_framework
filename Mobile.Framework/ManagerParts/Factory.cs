@@ -4,14 +4,19 @@ namespace Mobile.Framework.ManagerParts
 {
     public class Factory
     {
-        public MobileElement GetMobileElement(MobileSearch search)
+        internal Factory()
+        {
+
+        }
+
+        public Element GetElement(Search search)
         {
             Manager.Waiter.ForElementVisible(search);
             var element = Manager.Driver.FindElement(search);
             return element;
         }
 
-        public List<MobileElement> GetMobileElements(MobileSearch search)
+        public IEnumerable<Element> GetElements(Search search)
         {
             Manager.Waiter.ForElementVisible(search);
             var elements = Manager.Driver.FindElements(search);
