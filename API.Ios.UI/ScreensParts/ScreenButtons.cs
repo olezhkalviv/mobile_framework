@@ -5,6 +5,6 @@ namespace API.Ios.UI.ScreensParts
 {
     public class ScreenButtons
     {
-        internal MobileElement Page => Manager.Factory.GetMobileElement(MobileSearch.AccessibilityId("Buttons")); // todo: need to integrate page checking before accessing any element
+        internal Element Page => Manager.Factory.GetMobileElement(Search.AccessibilityId("Buttons")); // todo: need to integrate page checking before accessing any element
     }
 }

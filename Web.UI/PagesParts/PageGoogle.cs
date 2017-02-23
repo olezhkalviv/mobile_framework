@@ -6,10 +6,10 @@ namespace Web.UI.PagesParts
 {
     public class PageGoogle
     {
-        private List<MobileElement> LnkResults => Manager.Factory.GetMobileElements(MobileSearch.ClassName("_wSg"));
+        private List<Element> LnkResults => Manager.Factory.GetMobileElements(Search.ClassName("_wSg"));
 
-        public MobileElement TxtSearch => Manager.Factory.GetMobileElement(MobileSearch.Id("lst-ib"));
-        public MobileElement BtnSearch => Manager.Factory.GetMobileElement(MobileSearch.XPath("//button[@name='btnG']"));
+        public Element TxtSearch => Manager.Factory.GetMobileElement(Search.Id("lst-ib"));
+        public Element BtnSearch => Manager.Factory.GetMobileElement(Search.XPath("//button[@name='btnG']"));
 
         public string GetFirstLinkText()
         {
