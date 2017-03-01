@@ -7,22 +7,16 @@ namespace Mobile.Framework.ManagerParts
 {
     public class Driver
     {
-        internal Driver()
-        {
-
-        }
+        internal Driver() { }
 
         internal Driver(AppiumDriver<AppiumWebElement> driver)
         {
             Wrapper = driver;
         }
 
-        internal AppiumDriver<AppiumWebElement> Wrapper { get; } // todo: hide
+        internal AppiumDriver<AppiumWebElement> Wrapper { get; }
 
-        public void Quit()
-        {
-            Wrapper.Quit();
-        }
+        public string Title => Wrapper.Title;
 
         public void Back()
         {
@@ -48,6 +42,11 @@ namespace Mobile.Framework.ManagerParts
         public void HideKeyboard()
         {
             Wrapper.HideKeyboard();
+        }
+
+        public void Quit()
+        {
+            Wrapper.Quit();
         }
 
         public void SetImplicitWait(int seconds)

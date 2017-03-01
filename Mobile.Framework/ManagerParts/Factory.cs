@@ -4,10 +4,7 @@ namespace Mobile.Framework.ManagerParts
 {
     public class Factory
     {
-        internal Factory()
-        {
-
-        }
+        internal Factory() { }
 
         public Element GetElement(Search search)
         {

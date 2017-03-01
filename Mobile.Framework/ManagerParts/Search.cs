@@ -5,10 +5,7 @@ namespace Mobile.Framework.ManagerParts
 {
     public class Search
     {
-        internal Search()
-        {
-
-        }
+        internal Search() { }
 
         internal By Wrapper { get; private set; }
 
